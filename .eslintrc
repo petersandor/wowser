@@ -1,6 +1,11 @@
 {
   "extends": "timkurvers/react",
   "rules": {
+    "new-cap": [0],
+    "no-param-reassign": [0],
+    "no-cond-assign": [0],
+    "no-loop-func": [0],
+
     // Allow vertically aligning values
     "no-multi-spaces": [0],
 
