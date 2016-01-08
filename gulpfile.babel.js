@@ -3,6 +3,7 @@ import babel from 'gulp-babel';
 import cache from 'gulp-cached';
 import del from 'del';
 import gulp from 'gulp';
+import gutil from 'gulp-util';
 import mocha from 'gulp-mocha';
 import pkg from './package.json';
 import plumber from 'gulp-plumber';
@@ -13,9 +14,10 @@ const config = {
   specs: 'spec/**/*.js'
 };
 
-gulp.task('reset', function() {
+gulp.task('reset', function(done) {
   config.db.clear();
-  return process.stdout.write(`\n> Settings deleted from ${config.db.path}\n`);
+  gutil.log('Settings deleted from', gutil.colors.magenta(config.db.path));
+  done();
 });
 
 gulp.task('clean', function(cb) {
